@@ -9,6 +9,7 @@ describe("AccountInfo functionality", () => {
             "https://westend-rpc.polkadot.io/"
         );
         const accountNativeBalances = await accountInfo.getAccountInfo();
+        console.log(accountNativeBalances); 
         const keys = Object.keys(accountNativeBalances);
         expect(keys[0] === "nonce", "should have a nonce field");
         expect(keys[1] === "index", "should have a index field");

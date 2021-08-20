@@ -1,5 +1,6 @@
 const types = require('@polkadot/types');
 const registry = new types.TypeRegistry();
+const util = require('@polkadot/util')
 const util_crypto = require('@polkadot/util-crypto');
 const keyring = require('@polkadot/keyring');
 const request = require('request');
@@ -29,7 +30,7 @@ module.exports = class AccountInfo {
         return {
             "nonce": decodedArray[0],
             "index": decodedArray[1],
-            "freeBalance": decodedArray[2],
+            "freeBalance": parseInt(decodedArray[2], 16),
             "locked": decodedArray[3],
             "reserved": decodedArray[4]
         }
